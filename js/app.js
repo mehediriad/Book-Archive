@@ -36,15 +36,7 @@ const showSearchCount = searchCount => {
 }
 
 
-// Handel Empty Publish Year Element
-const isEmptyPublishedYear = () =>{
-    document.getElementById('book-published-year').style.display = 'none';
-}
 
-// Handel Empty Cover Image Source Element
-const isEmptyCoverImg = () =>{
-    document.getElementById('card-img').style.display = 'none';
-}
 
 // Get Book Details
 const getBook = books =>{
@@ -56,19 +48,24 @@ const getBook = books =>{
     books.docs.forEach(book=>{
         console.log(book)
         const bookTitle = book.title;
-        const bookAuthor = book.author_name[0];
+        // const bookAuthor = book.author_name[0];
         const firstPublishYear = book.first_publish_year;
+       
+        const coverILink = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
+
+        const img = `<img id="card-img" src="${coverILink}" class="card-img-top" alt="Cover-image">`;
         
-        const coverILink = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
          <div class="card h-100">
-         <img id="card-img" src="${book.cover_i !=='' ? coverILink : isEmptyCoverImg()}" class="card-img-top" alt="Cover-image">
+         ${book.cover_i ? img : ''}
          <div class="card-body">
                 <h4 class="card-title" id="book-title">${bookTitle}</h4>
-                <h6 class="card-text">Author: <span id="book-author"></span>${bookAuthor}</h6>
-                <h6 id="book-published-year" class="card-text">First Published: <span id="book-published">${book.first_publish_year!== null? book.first_publish_year : 'empty'}</span></h6>
+                <h6 class="card-text"> <span id="book-author"></span>${book.author_name ? 'Author:'+ book.author_name[0] : ''}</h6>
+
+
+                <h6 id="book-published-year" class="card-text"> <span id="book-published">${book.first_publish_year? 'First Published:'+ book.first_publish_year : ''}</span></h6>
          </div>
          </div>
         `;
@@ -76,3 +73,16 @@ const getBook = books =>{
     })
 
 }
+
+
+
+
+// // Handel Empty Publish Year Element
+// const isEmptyPublishedYear = () =>{
+//     document.getElementById('book-published-year').style.display = 'none';
+// }
+
+// // Handel Empty Cover Image Source Element
+// const isEmptyCoverImg = () =>{
+//     document.getElementById('card-img').style.display = 'none';
+// }
