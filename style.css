@@ -1,0 +1,9 @@
+#search-count{
+    visibility:hidden;
+}
+#empty-result{
+    display: none;
+}
+#no-result{
+    display: none;
+}

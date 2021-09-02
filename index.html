@@ -16,72 +16,31 @@
             <div class="input-group mb-3">
                 <input id="search-field" type="text" class="form-control" placeholder="Search the book you want"
                     aria-label="Search the book you want" aria-describedby="button-addon2">
-                <button onclick="searchFood()" class="btn btn-outline-secondary" type="button"
+                <button onclick="searchBook()" class="btn btn-outline-secondary" type="button"
                     id="button-search">search</button>
             </div>
+            <h6 id="empty-result" class="text-danger">Please!!Write Something.</h6>
             <!-- meal details -->
             <div id="meal-details">
-                <h6 class="text-muted">Search Result:</h6>
+                <h6 id="search-count" class="text-muted">Search Result: <span id="search-number"></span> </h6>
             </div>
         </div>
     </section>
-    <section id="search-result" class="container">
+    <section class="container">
+        <h6 id="no-result" class="text-danger">Please!!Write Something.</h6>
         <!-- meal search result -->
-        <div id="search-result" class="row row-cols-1 row-cols-md-6 g-4 mt-3">
-                <div class="col">
+        <div id="search-result" class="row row-cols-1 row-cols-md-4 g-4 mt-3">
+    
+                <!-- <div class="col">
                   <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src= "" class="card-img-top" alt="">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <h4 class="card-title" id="book-title">Card title</h4>
+                      <h6 class="card-text">Author: <span id="book-author"></span></h6>
+                      <h6 class="card-text">First Published: <span id="book-published"></span></h6>
                     </div>
                   </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
+                </div> -->
               
         </div>
     </section>
